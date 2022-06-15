@@ -329,3 +329,57 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2022-06-11 17:06:36,113 INFO  [restartedMain] com.pratian.PatientService.PatientServiceApplication : Started PatientServiceApplication in 7.695 seconds (JVM running for 10.733)
 2022-06-11 17:14:40,957 INFO  [http-nio-8092-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/patient] : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2022-06-11 17:14:40,957 INFO  [http-nio-8092-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2022-06-14 15:27:46,100 INFO  [restartedMain] com.pratian.PatientService.PatientServiceApplication : Starting PatientServiceApplication using Java 11.0.14 on LAPTOP-JNPO6IV2 with PID 280 (C:\Users\apsib\OneDrive\Desktop\New folder (3)\patient-service\target\classes started by apsib in C:\Users\apsib\OneDrive\Desktop\New folder (3)\patient-service)
+2022-06-14 15:27:46,105 INFO  [restartedMain] com.pratian.PatientService.PatientServiceApplication : The following profiles are active: local
+2022-06-14 15:27:46,201 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-14 15:27:46,202 INFO  [restartedMain] org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-14 15:27:47,354 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-14 15:27:47,453 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 88 ms. Found 4 JPA repository interfaces.
+2022-06-14 15:27:48,629 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8092 (http)
+2022-06-14 15:27:48,647 INFO  [restartedMain] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2022-06-14 15:27:48,648 INFO  [restartedMain] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-06-14 15:27:48,988 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/patient] : Initializing Spring embedded WebApplicationContext
+2022-06-14 15:27:48,989 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2786 ms
+2022-06-14 15:27:49,296 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-14 15:27:49,401 INFO  [restartedMain] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.28.Final
+2022-06-14 15:27:49,668 INFO  [restartedMain] org.hibernate.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-14 15:27:49,844 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2022-06-14 15:27:49,850 WARN  [restartedMain] com.zaxxer.hikari.util.DriverDataSource : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2022-06-14 15:27:50,682 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2022-06-14 15:27:50,716 INFO  [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-14 15:27:53,199 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-14 15:27:53,213 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-14 15:27:53,238 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2022-06-14 15:27:54,354 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-14 15:27:54,479 INFO  [restartedMain] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-14 15:27:56,067 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8092 (http) with context path '/patient'
+2022-06-14 15:27:56,078 INFO  [restartedMain] com.pratian.PatientService.PatientServiceApplication : Started PatientServiceApplication in 10.721 seconds (JVM running for 11.996)
+2022-06-14 15:29:02,704 INFO  [Thread-4] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-06-14 15:29:02,707 INFO  [Thread-4] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-14 15:29:02,713 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated...
+2022-06-14 15:29:02,730 INFO  [Thread-4] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed.
+2022-06-14 15:29:02,862 INFO  [restartedMain] com.pratian.PatientService.PatientServiceApplication : Starting PatientServiceApplication using Java 11.0.14 on LAPTOP-JNPO6IV2 with PID 280 (C:\Users\apsib\OneDrive\Desktop\New folder (3)\patient-service\target\classes started by apsib in C:\Users\apsib\OneDrive\Desktop\New folder (3)\patient-service)
+2022-06-14 15:29:02,863 INFO  [restartedMain] com.pratian.PatientService.PatientServiceApplication : The following profiles are active: local
+2022-06-14 15:29:03,336 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-14 15:29:03,386 INFO  [restartedMain] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
+2022-06-14 15:29:03,521 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8092 (http)
+2022-06-14 15:29:03,522 INFO  [restartedMain] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2022-06-14 15:29:03,523 INFO  [restartedMain] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2022-06-14 15:29:03,585 INFO  [restartedMain] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/patient] : Initializing Spring embedded WebApplicationContext
+2022-06-14 15:29:03,585 INFO  [restartedMain] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 718 ms
+2022-06-14 15:29:03,651 INFO  [restartedMain] org.hibernate.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-14 15:29:03,664 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Starting...
+2022-06-14 15:29:03,727 INFO  [restartedMain] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Start completed.
+2022-06-14 15:29:03,729 INFO  [restartedMain] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2022-06-14 15:29:04,037 INFO  [restartedMain] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-14 15:29:04,038 INFO  [restartedMain] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-14 15:29:04,049 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer : LiveReload server is running on port 35729
+2022-06-14 15:29:04,278 WARN  [restartedMain] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-14 15:29:04,306 INFO  [restartedMain] org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor'
+2022-06-14 15:29:05,016 INFO  [restartedMain] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 8092 (http) with context path '/patient'
+2022-06-14 15:29:05,020 INFO  [restartedMain] com.pratian.PatientService.PatientServiceApplication : Started PatientServiceApplication in 2.221 seconds (JVM running for 80.937)
+2022-06-14 15:29:05,022 INFO  [restartedMain] org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-06-14 15:29:58,796 INFO  [http-nio-8092-exec-3] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/patient] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-14 15:29:58,797 INFO  [http-nio-8092-exec-3] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2022-06-14 15:29:58,798 INFO  [http-nio-8092-exec-3] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1 ms
+2022-06-14 15:30:51,355 INFO  [http-nio-8092-exec-10] org.springdoc.api.AbstractOpenApiResource : Init duration for springdoc-openapi is: 508 ms
