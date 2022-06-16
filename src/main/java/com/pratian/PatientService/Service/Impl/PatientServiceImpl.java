@@ -15,7 +15,7 @@ public class PatientServiceImpl implements IPatientService
 	@Autowired
 	IPatientRepo patientRepo;
 	@Override
-	public List<Patient> showviewallpatients() {
+	public List<Patient> showviewallpatients() { // when we execute this, this will call IPatientRepo class and it implements showviewallpatients method and returns the value generated
 		// TODO Auto-generated method stub
 		return patientRepo.showviewallpatients();
 	}

@@ -15,9 +15,14 @@ public interface IPatientRepo extends JpaRepository<Patient, Long>{
 	
 	public Patient getPatientByPatientId(long id);
 
-	@Query(value="select P from Patient P")//from db tables
-	public List<Patient> showviewallpatients();
+	@Query(value="select P from Patient P")//query from db tables to get all list of patients
+	public List<Patient> showviewallpatients();// method we created in service class
 
-	@Query(value="select P from Patient P where P.id=:id ")
+	@Query(value="select P from Patient P where P.id=:id ")//query from db tables to get a particular patient using id
 	public Patient showviewallpatientById(@Param(value="id")long id);
+	
+//	@Query(value="select A from Appointmenthistory A where A.id=:id ")
+//	public Patient AppointmentHistory(@Param(value="id")long id);
+
+
 }

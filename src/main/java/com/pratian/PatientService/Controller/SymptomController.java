@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pratian.PatientService.Entities.Symptom;
@@ -36,12 +37,13 @@ public class SymptomController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping("/symptoms")
+	@RequestMapping(value="/symptoms", method = RequestMethod.GET)// to find or view all the symptoms we used GET API 
+//	@GetMapping("/symptoms")// we can write in this way
 	@Operation(summary = "To find all symptoms")
 	public ResponseEntity<?> get() {
 		ResponseEntity<?> response = null;
 		try {
-			response = new ResponseEntity<>(service.getSymptoms(), HttpStatus.OK);
+			response = new ResponseEntity<>(service.getSymptoms(), HttpStatus.OK);// the request is sent to symptomservice and from there we get methods
 		} catch (SymptomNotFoundException e) {
 			response = new ResponseEntity<>(e.getMessage(), HttpStatus.OK);
 		}
@@ -55,7 +57,7 @@ public class SymptomController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping("/addsymptom")
+	@RequestMapping(value = "/addsymptom", method = RequestMethod.POST)
 	@Operation(summary = "To Add Symptom")
 	public ResponseEntity<?> post(@RequestBody Symptom symptom) {
 		ResponseEntity<?> response = null;
@@ -75,7 +77,7 @@ public class SymptomController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping("/get/{id}")
+	@RequestMapping(value="/get/{id}", method=RequestMethod.GET)
 	@Operation(summary = "To find symptom by using id")
 	public ResponseEntity<?>get(@PathVariable(value = "id") long id) {
 		ResponseEntity<?> response=null;
@@ -93,12 +95,14 @@ public class SymptomController {
 	 * 
 	 * @return
 	 */
-	@PutMapping("/edit")
-	@Operation(summary = "To edit Symptom details")
-	public ResponseEntity<?> put(@RequestBody Symptom symptom) throws SymptomNotFoundException {
+	//@RequestMapping(value = "/edit/{symptomId}", method = RequestMethod.PUT)
+	@PutMapping("/edit/{symptomId}")
+	@Operation(summary = "To edit Symptom details using symptomId")
+	
+	public ResponseEntity<?> put(@PathVariable(value = "symptomId")long symptomId,@RequestBody Symptom symptom) throws SymptomNotFoundException {
 		ResponseEntity<?> response = null;
 		try {
-			response = new ResponseEntity<Symptom>(service.editSymptom(symptom), HttpStatus.OK);
+			response = new ResponseEntity<Symptom>(service.editSymptom(symptomId, symptom), HttpStatus.OK);
 		} catch (SymptomNotFoundException e) {
 			response = new ResponseEntity<>(e.getMessage(), HttpStatus.OK);
 		}
@@ -112,7 +116,7 @@ public class SymptomController {
 	 * 
 	 * @return
 	 */
-	@DeleteMapping("/delete/{id}")
+	@RequestMapping(value="/delete/{id}", method =RequestMethod.DELETE)
 	@Operation(summary = "To delete Symptom by using id")
 	public ResponseEntity<?> delete(@PathVariable(value = "id") long id) {
 		ResponseEntity<?> response = null;

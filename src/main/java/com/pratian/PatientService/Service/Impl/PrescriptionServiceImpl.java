@@ -11,20 +11,19 @@ import com.pratian.PatientService.Service.PrescriptionService;
 @Service
 public class PrescriptionServiceImpl implements PrescriptionService{
 
-@Autowired
-private PrescriptionRepo repo;
-
-
-@Override
-public List<PrescriptionHistory> getPrescription() {	
-
-return repo.getPrescription();
-}
-@Override
-public PrescriptionHistory getPrescriptionById(long id) {
-
-return repo.getPrescriptionById(id);
-}
+	@Autowired
+	private PrescriptionRepo repo;
+	
+	@Override
+	public List<PrescriptionHistory> getPrescription() {	
+	
+		return repo.getPrescription();
+	}
+	@Override
+	public PrescriptionHistory getPrescriptionById(long id) {
+	
+		return repo.getPrescriptionById(id);
+	}
 
 
 }

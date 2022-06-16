@@ -27,6 +27,7 @@ public class PrescriptionController {
 		return service.getPrescription();
 		}
 		@GetMapping("/Prescription/{id}")
+		@Operation(summary = "To find PrescriptionHistory using id")
 		public PrescriptionHistory get(@PathVariable(value="id")long id) {
 		return service.getPrescriptionById(id);
 

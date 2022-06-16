@@ -22,8 +22,8 @@ public class SymptomServiceImpl implements SymptomService{
 		
 		List<Symptom> symptoms = repo.getSymptoms();
 		if(symptoms.isEmpty()) {
-			throw new SymptomNotFoundException("Symptom history is not found.please add any symptom");
-		}
+			throw new SymptomNotFoundException("Symptom history is not found.please add any symptom");// if symptoms list is empty then it gives SymptomNotFoundException exception
+		}// if list is not empty then it returns the list of symptoms
 		return symptoms;
 	}
 
@@ -48,7 +48,7 @@ public class SymptomServiceImpl implements SymptomService{
 	}
 
 	@Override
-	public Symptom editSymptom(Symptom symptom) throws SymptomNotFoundException {
+	public Symptom editSymptom(long symptomId,Symptom symptom) throws SymptomNotFoundException {
 		Symptom symptom3=repo.findById(symptom.getSymptomId())
 				.orElseThrow(()->new SymptomNotFoundException("symptom id not found,Enter correct Symptom id"));
 		symptom3.setSymptomName(symptom.getSymptomName());
