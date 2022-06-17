@@ -2,11 +2,13 @@ package com.pratian.PatientService.Entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -30,6 +32,7 @@ public class Patient {
 	private String allergies;
 	private String activeissues;
 	private String medicalproblems;
+	@JoinColumn (name = "patientId")
 	@OneToMany
 	private List<Symptom> symptoms;
 	@OneToMany
@@ -38,7 +41,7 @@ public class Patient {
 	private List<PrescriptionHistory> prescriptionhistory;
 	@OneToMany
 	private List<Feedback> feedback;
-	
+		
 	
 	public Patient() {} //constructor
 	
