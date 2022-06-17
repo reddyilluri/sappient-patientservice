@@ -92,18 +92,18 @@ public class PatientController {
 	}
 
 	//@RequestMapping(value = "/updatepatientdetails/{id}", method = RequestMethod.PUT) // hear we need to edit the
-		@PutMapping("/updatepatientdetails/{id}")																				// patient info by using PUT API
-	@Operation(summary = "To update the Patient Details")
-	public ResponseEntity<?> put(@PathVariable(value = "id") Long id, @RequestBody Patient patient)
-			throws PatientNotFoundException {
-		ResponseEntity<?> response = null;
-		try {
-			response = new ResponseEntity<Patient>(service.editPatientDetails(id, patient), HttpStatus.OK);
-		} catch (PatientNotFoundException e) {
-			response = new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
-		}
-
-		return response;
-	}
+	//	@PutMapping("/updatepatientdetails/{id}")																				// patient info by using PUT API
+	//@Operation(summary = "To update the Patient Details")
+	//public ResponseEntity<?> put(@PathVariable(value = "id") Long id, @RequestBody Patient patient)
+	//		throws PatientNotFoundException {
+	//	ResponseEntity<?> response = null;
+	//	try {
+	//		response = new ResponseEntity<Patient>(service.editPatientDetails(id, patient), HttpStatus.OK);
+	//	} catch (PatientNotFoundException e) {
+	//		response = new ResponseEntity<String>(e.getMessage(), HttpStatus.NOT_FOUND);
+	//	}
+//
+//		return response;
+//	}
 
 }
