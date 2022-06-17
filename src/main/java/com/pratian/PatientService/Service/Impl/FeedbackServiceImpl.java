@@ -10,17 +10,13 @@ import com.pratian.PatientService.Entities.Feedback;
 import com.pratian.PatientService.Repository.FeedbackRepository;
 import com.pratian.PatientService.Service.FeedbackService;
 
-// we use the methods and querys that we created in service interface classes and repository classes
-//in-built methods //save
-
-
 @Service
 public class FeedbackServiceImpl implements FeedbackService{
 	
 	@Autowired
-	private FeedbackRepository feedbackRepository; // we used autowired because we are using other classes in this class
+	private FeedbackRepository feedbackRepository;
 
-	public FeedbackServiceImpl(FeedbackRepository feedbackRepository) { 
+	public FeedbackServiceImpl(FeedbackRepository feedbackRepository) {
 		super();
 		this.feedbackRepository = feedbackRepository;
 	}

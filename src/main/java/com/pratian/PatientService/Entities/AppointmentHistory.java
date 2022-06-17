@@ -3,6 +3,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 @Entity
 public class AppointmentHistory {
 
@@ -15,6 +17,7 @@ public class AppointmentHistory {
 	private String appointmentDate;
 	private String comment;
 	private long Time;
+
 	
 	public long getTime() {
 		return Time;

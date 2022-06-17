@@ -13,9 +13,9 @@ import com.pratian.PatientService.Entities.Symptom;
 public interface SymptomRepo extends JpaRepository<Symptom, Long>{
 	
 	@Query(value="select s from Symptom s")
-	public List<Symptom>getSymptoms();// to get all the list of symptoms
+	public List<Symptom>getSymptoms();
 	
 	@Query(value="select s from Symptom s where s.symptomId=:id ")
-	public Symptom getSymptomById(@Param(value="id")long id);// to get a particular symptom using id
-	
+	public Symptom getSymptomById(@Param(value="id")long id);
+
 }

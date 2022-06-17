@@ -118,10 +118,14 @@ public class SymptomController {
 	 */
 	@RequestMapping(value="/delete/{id}", method =RequestMethod.DELETE)
 	@Operation(summary = "To delete Symptom by using id")
-	public ResponseEntity<?> delete(@PathVariable(value = "id") long id) {
+	public ResponseEntity<?> delete(@PathVariable(value = "id") long id) throws SymptomNotFoundException {
 		ResponseEntity<?> response = null;
-
+	try {
 		response = new ResponseEntity<>(service.deleteSymptom(id), HttpStatus.OK);
+		
+	}catch (SymptomNotFoundException e) {
+		response = new ResponseEntity<>(e.getMessage(), HttpStatus.OK);
+	}
 		return response;
 	}
 
