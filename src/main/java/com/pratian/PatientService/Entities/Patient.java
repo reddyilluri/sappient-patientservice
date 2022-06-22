@@ -31,17 +31,22 @@ public class Patient {
 	private String allergies;
 	private String activeissues;
 	private String medicalproblems; 
-	@JoinColumn(name = "symtomId")
-	@OneToMany
-	private List<Symptom> symptoms;
-	//@JoinColumn(name = "patientId")
-    @JoinColumn(name = "appointmentHistoryId")
-	@OneToMany
-	private List<AppointmentHistory> appointmenthistory;
-	@OneToMany
-	private List<PrescriptionHistory> prescriptionhistory;
-	@OneToMany
-	private List<Feedback> feedback;
+	@OneToMany(cascade = CascadeType.ALL) // (targetEntity = Symptom.class)
+	@JoinColumn(name = "Patient_patientId")
+	private List<Symptom> symptoms = new ArrayList<Symptom>();
+
+	@OneToMany(cascade = CascadeType.ALL) // (targetEntity = AppointmentHistory.class)
+	@JoinColumn(name = "Patient_patientId")
+	private List<AppointmentHistory> appointmenthistory = new ArrayList<AppointmentHistory>();
+
+	@OneToMany (cascade = CascadeType.ALL)// (targetEntity = PrescriptionHistory.class)
+	@JoinColumn(name = "Patient_patientId")
+	private List<PrescriptionHistory> prescriptionhistory = new ArrayList<PrescriptionHistory>();
+
+	@OneToMany(cascade = CascadeType.ALL) // (targetEntity = Feedback.class)
+	@JoinColumn(name = "Patient_patientId")
+	private List<Feedback> feedback = new ArrayList<Feedback>();
+
 	
 	
 	public Patient() {} //constructor
