@@ -4,69 +4,83 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "Prescription")
-public class PrescriptionHistory {
+public class AppointmentHistory {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
-	private long prescriptionId;
-	// Symptoms,PrescriptionDate,Medicines;
-	private String symptoms;
-	private String prescriptionDate;
-	private String currentDate;
+	private long appointmentHistoryId;
+	private int year;
+	private String doctorname;
+	private String specialist;
+	private String appointmentDate;
+	private String comment;
 	private String time;
-	private String medicines;
 
-	public PrescriptionHistory() {
+	public AppointmentHistory() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public PrescriptionHistory(long prescriptionId, String symptoms, String prescriptionDate, String currentDate,
-			String time, String medicines) {
+	public AppointmentHistory(long appointmentHistoryId, int year, String doctorname, String specialist,
+			String appointmentDate, String comment, String time) {
 		super();
-		this.prescriptionId = prescriptionId;
-		this.symptoms = symptoms;
-		this.prescriptionDate = prescriptionDate;
-		this.currentDate = currentDate;
+		this.appointmentHistoryId = appointmentHistoryId;
+		this.year = year;
+		this.doctorname = doctorname;
+		this.specialist = specialist;
+		this.appointmentDate = appointmentDate;
+		this.comment = comment;
 		this.time = time;
-		this.medicines = medicines;
 	}
 
-	public long getPrescriptionId() {
-		return prescriptionId;
+	public long getAppointmentHistoryId() {
+		return appointmentHistoryId;
 	}
 
-	public void setPrescriptionId(long prescriptionId) {
-		this.prescriptionId = prescriptionId;
+	public void setAppointmentHistoryId(long appointmentHistoryId) {
+		this.appointmentHistoryId = appointmentHistoryId;
 	}
 
-	public String getSymptoms() {
-		return symptoms;
+	public int getYear() {
+		return year;
 	}
 
-	public void setSymptoms(String symptoms) {
-		this.symptoms = symptoms;
+	public void setYear(int year) {
+		this.year = year;
 	}
 
-	public String getPrescriptionDate() {
-		return prescriptionDate;
+	public String getDoctorname() {
+		return doctorname;
 	}
 
-	public void setPrescriptionDate(String prescriptionDate) {
-		this.prescriptionDate = prescriptionDate;
+	public void setDoctorname(String doctorname) {
+		this.doctorname = doctorname;
 	}
 
-	public String getCurrentDate() {
-		return currentDate;
+	public String getSpecialist() {
+		return specialist;
 	}
 
-	public void setCurrentDate(String currentDate) {
-		this.currentDate = currentDate;
+	public void setSpecialist(String specialist) {
+		this.specialist = specialist;
+	}
+
+	public String getAppointmentDate() {
+		return appointmentDate;
+	}
+
+	public void setAppointmentDate(String appointmentDate) {
+		this.appointmentDate = appointmentDate;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 	public String getTime() {
@@ -77,19 +91,11 @@ public class PrescriptionHistory {
 		this.time = time;
 	}
 
-	public String getMedicines() {
-		return medicines;
-	}
-
-	public void setMedicines(String medicines) {
-		this.medicines = medicines;
-	}
-
 	@Override
 	public String toString() {
-		return "PrescriptionHistory [prescriptionId=" + prescriptionId + ", symptoms=" + symptoms
-				+ ", prescriptionDate=" + prescriptionDate + ", currentDate=" + currentDate + ", time=" + time
-				+ ", medicines=" + medicines + "]";
+		return "AppointmentHistory [appointmentHistoryId=" + appointmentHistoryId + ", year=" + year + ", doctorname="
+				+ doctorname + ", specialist=" + specialist + ", appointmentDate=" + appointmentDate + ", comment="
+				+ comment + ", time=" + time + "]";
 	}
 
 }
