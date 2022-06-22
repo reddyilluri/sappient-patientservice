@@ -1,117 +1,95 @@
 package com.pratian.PatientService.Entities;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-@Entity
-public class AppointmentHistory {
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Prescription")
+public class PrescriptionHistory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long appointmentHistoryId;
-	private int year;
-	private String doctorname;
-	private String specialist;
-	private String appointmentDate;
-	private String comment;
-	private long Time;
 
-	
-	public long getTime() {
-		return Time;
-	}
-	public void setTime(long time) {
-		Time = time;
-	}
-	public AppointmentHistory() {
+	private long prescriptionId;
+	// Symptoms,PrescriptionDate,Medicines;
+	private String symptoms;
+	private String prescriptionDate;
+	private String currentDate;
+	private String time;
+	private String medicines;
+
+	public PrescriptionHistory() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public AppointmentHistory(long appointmentHistoryId,int year,String doctorname,String specialist,String appointmentDate,String comment)
-	{
+
+	public PrescriptionHistory(long prescriptionId, String symptoms, String prescriptionDate, String currentDate,
+			String time, String medicines) {
 		super();
-		this.appointmentHistoryId=appointmentHistoryId;
-		this.year=year;
-		this.doctorname=doctorname;
-		this.specialist=specialist;
-		this.appointmentDate=appointmentDate;
-		this.comment=comment;
-		this.Time=Time;
+		this.prescriptionId = prescriptionId;
+		this.symptoms = symptoms;
+		this.prescriptionDate = prescriptionDate;
+		this.currentDate = currentDate;
+		this.time = time;
+		this.medicines = medicines;
 	}
-	public long getappointmentHistoryId() 
-	{
-		return appointmentHistoryId;
+
+	public long getPrescriptionId() {
+		return prescriptionId;
 	}
-	public void setappointmentHistoryId(long appointmentHistoryId) 
-	{
-		this.appointmentHistoryId = appointmentHistoryId;
+
+	public void setPrescriptionId(long prescriptionId) {
+		this.prescriptionId = prescriptionId;
 	}
-	public int getyear() 
-	{
-		return year;
+
+	public String getSymptoms() {
+		return symptoms;
 	}
-	public void setyear(int year) 
-	{
-		this.year = year;
+
+	public void setSymptoms(String symptoms) {
+		this.symptoms = symptoms;
 	}
-	public String getdoctorname() 
-	{
-		return doctorname;
+
+	public String getPrescriptionDate() {
+		return prescriptionDate;
 	}
-	public void setdoctorname(String doctorname) 
-	{
-		this.doctorname = doctorname;
+
+	public void setPrescriptionDate(String prescriptionDate) {
+		this.prescriptionDate = prescriptionDate;
 	}
-	public String getspecialist() 
-	{
-		return specialist;
+
+	public String getCurrentDate() {
+		return currentDate;
 	}
-	public void setspecialist(String specialist) 
-	{
-		this.specialist = specialist;
+
+	public void setCurrentDate(String currentDate) {
+		this.currentDate = currentDate;
 	}
-	public String getappointmentDate() 
-	{
-		return appointmentDate;
+
+	public String getTime() {
+		return time;
 	}
-	public void setappointmentDate(String appointmentDate) 
-	{
-		this.appointmentDate = appointmentDate;
+
+	public void setTime(String time) {
+		this.time = time;
 	}
-	public String getcomment() 
-	{
-		return comment;
+
+	public String getMedicines() {
+		return medicines;
 	}
-	public void setcomment(String comment) 
-	{
-		this.comment = comment;
+
+	public void setMedicines(String medicines) {
+		this.medicines = medicines;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "AppointmentHistory [appointmentHistoryId=" + appointmentHistoryId + ", year=" + year + ", doctorname=" + doctorname
-				+ ", specialist=" + specialist + ", appointmentDate=" +appointmentDate+",comment=" +comment+", Time="+Time+"]";
+		return "PrescriptionHistory [prescriptionId=" + prescriptionId + ", symptoms=" + symptoms
+				+ ", prescriptionDate=" + prescriptionDate + ", currentDate=" + currentDate + ", time=" + time
+				+ ", medicines=" + medicines + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
