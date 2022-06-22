@@ -1,4 +1,3 @@
-
 package com.pratian.PatientService.Repository;
 import java.util.List;
 
@@ -16,7 +15,7 @@ public interface PrescriptionRepo extends JpaRepository<PrescriptionHistory, Lon
     @Query(value="select P from PrescriptionHistory P")
     public List<PrescriptionHistory>getPrescription();
 
-    @Query(value="select P from PrescriptionHistory P where P. PrescriptionId=:id ")
+    @Query(value="select P from PrescriptionHistory P where P.prescriptionId=:id ")
     public PrescriptionHistory getPrescriptionById(@Param(value="id")long id);
  
 }
