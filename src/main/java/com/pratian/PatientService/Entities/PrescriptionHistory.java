@@ -12,78 +12,84 @@ import javax.persistence.Table;
 public class PrescriptionHistory {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
-	private long PrescriptionId;
-	//Symptoms,PrescriptionDate,Medicines;
-	private String Symptoms;
-	private String PrescriptionDate;
-	private String CurrentDate;
-	private String Time;
-	private String Medicines;
-	
+
+	private long prescriptionId;
+	// Symptoms,PrescriptionDate,Medicines;
+	private String symptoms;
+	private String prescriptionDate;
+	private String currentDate;
+	private String time;
+	private String medicines;
 
 	public PrescriptionHistory() {
 		super();
-		
+		// TODO Auto-generated constructor stub
 	}
-	
-	public PrescriptionHistory(long PrescriptionId, String Symptoms,String PrescriptionDate, String Medicine, String medicines, String Time, String CurrentDate) {
+
+	public PrescriptionHistory(long prescriptionId, String symptoms, String prescriptionDate, String currentDate,
+			String time, String medicines) {
 		super();
-		this.PrescriptionId=PrescriptionId;
-		this.Symptoms=Symptoms;
-		this.PrescriptionDate=PrescriptionDate;
-		this.CurrentDate=CurrentDate;
-		this.Time=Time;
-		this.Medicines=medicines;
-		
-		
-	}
-	public String getCurrentDate() {
-		return CurrentDate;
-	}
-
-	public void setCurrentDate(String currentDate) {
-		CurrentDate = currentDate;
-	}
-
-	public String getTime() {
-		return Time;
-	}
-
-	public void setTime(String time) {
-		Time = time;
+		this.prescriptionId = prescriptionId;
+		this.symptoms = symptoms;
+		this.prescriptionDate = prescriptionDate;
+		this.currentDate = currentDate;
+		this.time = time;
+		this.medicines = medicines;
 	}
 
 	public long getPrescriptionId() {
-		return PrescriptionId;
-	}
-	public void setPrescriptionId(long PrescriptionId) {
-		this.PrescriptionId = PrescriptionId;
-	}
-	
-	public String getSymptoms() {
-		return Symptoms;
-	}
-	public void setSymptoms(String symptoms) {
-		Symptoms = symptoms;
-	}
-	public String getPrescriptionDate() {
-		return PrescriptionDate;
-	}
-	public void setPrescriptionDate(String prescriptionDate) {
-		PrescriptionDate = prescriptionDate;
-	}
-	public String getMedicines() {
-		return Medicines;
-	}
-	public void setMedicines(String medicines) {
-		Medicines = medicines;
-	}
-	//ToString method
-	@Override
-    public String toString() {
-        return "Presccription [PrescriptionId=" + PrescriptionId + ", symptoms=" + Symptoms + ", PrescriptionDate=" + PrescriptionDate
-                + ", Medicines=" + Medicines +" ,Time=" + Time + ",CurrentDate=" + CurrentDate +"]";
-	}
+		return prescriptionId;
 	}
 
+	public void setPrescriptionId(long prescriptionId) {
+		this.prescriptionId = prescriptionId;
+	}
+
+	public String getSymptoms() {
+		return symptoms;
+	}
+
+	public void setSymptoms(String symptoms) {
+		this.symptoms = symptoms;
+	}
+
+	public String getPrescriptionDate() {
+		return prescriptionDate;
+	}
+
+	public void setPrescriptionDate(String prescriptionDate) {
+		this.prescriptionDate = prescriptionDate;
+	}
+
+	public String getCurrentDate() {
+		return currentDate;
+	}
+
+	public void setCurrentDate(String currentDate) {
+		this.currentDate = currentDate;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getMedicines() {
+		return medicines;
+	}
+
+	public void setMedicines(String medicines) {
+		this.medicines = medicines;
+	}
+
+	@Override
+	public String toString() {
+		return "PrescriptionHistory [prescriptionId=" + prescriptionId + ", symptoms=" + symptoms
+				+ ", prescriptionDate=" + prescriptionDate + ", currentDate=" + currentDate + ", time=" + time
+				+ ", medicines=" + medicines + "]";
+	}
+
+}
