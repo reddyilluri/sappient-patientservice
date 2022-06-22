@@ -18,7 +18,7 @@ public interface AppointmentHistoryRepo extends JpaRepository<AppointmentHistory
    public List<AppointmentHistory> showallappointmenthistory();
   
   
-   @Query(value="select a from AppointmentHistory a where a. appointmentHistoryId=:id ")
+   @Query(value="select a from AppointmentHistory a where a.appointmentHistoryId=:id ")
    public AppointmentHistory getAppointmentHistoryById(@Param(value="id")long id);
 		
 		
