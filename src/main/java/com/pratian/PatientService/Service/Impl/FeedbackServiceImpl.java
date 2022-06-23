@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.pratian.PatientService.Entities.Feedback;
 import com.pratian.PatientService.Repository.FeedbackRepository;
+import com.pratian.PatientService.Repository.IPatientRepo;
 import com.pratian.PatientService.Service.FeedbackService;
 
 @Service
@@ -30,9 +31,9 @@ public class FeedbackServiceImpl implements FeedbackService{
 	
 
 	@Override
-	public Feedback getFeedback(Long id) {
+	public List<Feedback> getFeedback(Long id) {
 		// TODO Auto-generated method stub
-		return feedbackRepository.findByFeedId(id);
+		return prepo.showviewallpatientById(id).getFeedback();
 	}
 	
 	@Override
