@@ -1,6 +1,6 @@
 package com.pratian.PatientService.Exceptions;
 
-public class PrescriptionNotFoundException {
+public class PrescriptionNotFoundException extends Exception {
 	 @SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
