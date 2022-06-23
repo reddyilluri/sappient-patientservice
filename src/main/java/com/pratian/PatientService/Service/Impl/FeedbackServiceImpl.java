@@ -16,6 +16,9 @@ public class FeedbackServiceImpl implements FeedbackService{
 	
 	@Autowired
 	private FeedbackRepository feedbackRepository;
+	
+	@Autowired
+	private IPatientRepo prepo;
 
 	public FeedbackServiceImpl(FeedbackRepository feedbackRepository) {
 		super();
