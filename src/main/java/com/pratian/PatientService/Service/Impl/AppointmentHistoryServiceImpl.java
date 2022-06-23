@@ -30,7 +30,7 @@ public List<AppointmentHistory> getAppointmentHistoryById(long id) throws Appoin
 	// TODO Auto-generated method stub
 	List<AppointmentHistory> appointmentHistory = prepo.showviewallpatientById(id).getAppointmenthistory();
 	if(appointmentHistory.isEmpty()) {
-		throw new AppointmentHistoryNotFoundException("appointment history is not found");
+		throw new AppointmentHistoryNotFoundException("patient id's appointment history is not found");
 	}
 	else
 	return appointmentHistory;
