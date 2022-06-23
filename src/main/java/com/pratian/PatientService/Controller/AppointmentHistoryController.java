@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pratian.PatientService.Entities.AppointmentHistory;
 import com.pratian.PatientService.Entities.Feedback;
 import com.pratian.PatientService.Entities.PrescriptionHistory;
+import com.pratian.PatientService.Exceptions.AppointmentHistoryNotFoundException;
+import com.pratian.PatientService.Exceptions.SymptomNotFoundException;
 import com.pratian.PatientService.Service.AppointmentHistoryService;
 import com.pratian.PatientService.Service.PrescriptionService;
 import com.pratian.PatientService.Service.Impl.AppointmentHistoryServiceImpl;
@@ -45,9 +47,15 @@ public class AppointmentHistoryController {
 	}
 	
 	@GetMapping("/AppointmentHistory/{id}")
-	public AppointmentHistory get(@PathVariable(value="id")long id) {
-	return service.getAppointmentHistoryById(id);
-
+	public ResponseEntity<?>get(@PathVariable(value = "id") long id) {
+		ResponseEntity<?> response=null;
+		try {
+			response=new ResponseEntity<>(service.getAppointmentHistoryById(id),HttpStatus.OK);
+		}catch (AppointmentHistoryNotFoundException e) {
+			response=new ResponseEntity<>(e.getMessage(),HttpStatus.OK);
+		}
+		
+		return response;
 	
 }
 
