@@ -30,6 +30,7 @@ public class PrescriptionController {
 		return service.getPrescription();
 		}
 		@GetMapping("/Prescription/{id}")
+		@Operation(summary = "Prescription using Patient Id")
 		public ResponseEntity<?>get(@PathVariable(value = "id") long id) {
 			ResponseEntity<?> response=null;
 			try {
