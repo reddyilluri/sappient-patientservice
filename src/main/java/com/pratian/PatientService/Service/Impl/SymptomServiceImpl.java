@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.pratian.PatientService.Entities.Symptom;
 import com.pratian.PatientService.Exceptions.SymptomNotFoundException;
+import com.pratian.PatientService.Repository.IPatientRepo;
 import com.pratian.PatientService.Repository.SymptomRepo;
 import com.pratian.PatientService.Service.SymptomService;
 
@@ -15,6 +16,11 @@ public class SymptomServiceImpl implements SymptomService{
 
 	@Autowired
 	private SymptomRepo repo;
+	
+	@Autowired
+	private IPatientRepo prepo;
+	
+	
 	
 	
 	@Override
@@ -40,10 +46,13 @@ public class SymptomServiceImpl implements SymptomService{
 	}
 
 	@Override
-	public Symptom getSymptomById(long id) throws SymptomNotFoundException{
+	public List<Symptom> getSymptomById(long id) throws SymptomNotFoundException{
 		
-		Symptom symptom=repo.findById(id).orElseThrow(()->
-		new SymptomNotFoundException("Symptom Id does not exist"));
+		List<Symptom> symptom = prepo.showviewallpatientById(id).getSymptoms();
+		if(symptom.isEmpty()) {
+			throw new SymptomNotFoundException("Symptom is not found.please add any symptom");
+		}
+		else
 		return symptom;
 	}
 
