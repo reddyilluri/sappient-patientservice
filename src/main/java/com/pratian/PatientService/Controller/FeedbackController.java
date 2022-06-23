@@ -53,10 +53,10 @@ public class FeedbackController {
     return new ResponseEntity<Feedback>(feedbackservice.updateFeedback(id, pre),HttpStatus.OK);
     }
     
-    @GetMapping("/get/{id}")
-    public ResponseEntity<Feedback> getfeedback(@PathVariable(value = "id") Long id) {
-    Feedback feedbacklist = feedbackservice.getFeedback(id);
-    return new ResponseEntity<>(feedbacklist, HttpStatus.OK);
+   @GetMapping("/get/{id}")
+    public ResponseEntity<List<Feedback>> getfeedback(@PathVariable(value = "id") Long id) {
+    List<Feedback> feedbacklist = feedbackservice.getFeedback(id);
+    return new ResponseEntity<List<Feedback>>(feedbacklist, HttpStatus.OK);
     }
     
     
