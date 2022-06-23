@@ -78,7 +78,7 @@ public class SymptomController {
 	 * @return
 	 */
 	@RequestMapping(value="/get/{id}", method=RequestMethod.GET)
-	@Operation(summary = "To find symptom by using id")
+	@Operation(summary = "symptom by using patient id")
 	public ResponseEntity<?>get(@PathVariable(value = "id") long id) {
 		ResponseEntity<?> response=null;
 		try {
