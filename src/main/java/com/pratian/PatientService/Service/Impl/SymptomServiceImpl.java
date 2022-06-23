@@ -50,7 +50,7 @@ public class SymptomServiceImpl implements SymptomService{
 		
 		List<Symptom> symptom = prepo.showviewallpatientById(id).getSymptoms();
 		if(symptom.isEmpty()) {
-			throw new SymptomNotFoundException("Symptom is not found.please add any symptom");
+			throw new SymptomNotFoundException("Patient Id's Symptom is not found.please add any symptom");
 		}
 		else
 		return symptom;
