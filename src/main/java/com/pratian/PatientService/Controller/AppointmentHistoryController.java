@@ -47,6 +47,7 @@ public class AppointmentHistoryController {
 	}
 	
 	@GetMapping("/AppointmentHistory/{id}")
+	@Operation(summary = "AppointmentHistory using Patient Id")
 	public ResponseEntity<?>get(@PathVariable(value = "id") long id) {
 		ResponseEntity<?> response=null;
 		try {
