@@ -56,6 +56,7 @@ public class FeedbackController {
     }
     
     @GetMapping("/get/{id}")
+    @Operation(summary = "Feedback using Patient Id")
     public ResponseEntity<List<Feedback>> getfeedback(@PathVariable(value = "id") Long id) {
     List<Feedback> feedbacklist = feedbackservice.getFeedback(id);
     return new ResponseEntity<List<Feedback>>(feedbacklist, HttpStatus.OK);
