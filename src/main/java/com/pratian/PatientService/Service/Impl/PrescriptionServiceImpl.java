@@ -27,7 +27,7 @@ return repo.getPrescription();
 public List<PrescriptionHistory> getPrescriptionById(long id) throws PrescriptionNotFoundException {
 	List<PrescriptionHistory> prescriptions =  prepo.showviewallpatientById(id).getPrescriptionhistory();
 	if(prescriptions.isEmpty()) {
-		throw new PrescriptionNotFoundException("Prescription history is not found");
+		throw new PrescriptionNotFoundException("Patient Id's Prescription history is not found");
 	}
 return prescriptions;
 }
