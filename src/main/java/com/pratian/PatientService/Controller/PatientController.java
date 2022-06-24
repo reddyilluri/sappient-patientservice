@@ -43,10 +43,10 @@ public class PatientController {
 //		return service.showviewallpatientsById(id);
 //	}
 
-//	@RequestMapping(value = "/getpatients", method = RequestMethod.GET)
-//	public List<Patient> showviewallpatients() {
-//		return service.showviewallpatients();
-//	}
+	@RequestMapping(value = "/getpatients", method = RequestMethod.GET)
+	public List<Patient> showviewallpatients() {
+		return service.showviewallpatients();
+	}
 
 //	@RequestMapping(value="/getpatients/{id}",method =RequestMethod.GET)
 //	public List<Patient> showviewallpatients(@PathVariable(value="id")long id) {
