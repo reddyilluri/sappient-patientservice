@@ -9,7 +9,7 @@ import com.pratian.PatientService.Exceptions.PatientNotFoundException;
 public interface IPatientService {
 	public List<Patient> showviewallpatients();
 		
-	public Patient showviewallpatientsById(long id);
+//	public Patient showviewallpatientsById(long id);
 	
 //	public List<AppointmentHistory> getAppointments(long id);
 	
