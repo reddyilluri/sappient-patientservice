@@ -23,11 +23,11 @@ public class PatientServiceImpl implements IPatientService {
 		return patientRepo.showviewallpatients();
 	}
 
-	@Override
-	public Patient showviewallpatientsById(long id) {
-		// TODO Auto-generated method stub
-		return patientRepo.showviewallpatientById(id);
-	}
+//	@Override
+//	public Patient showviewallpatientsById(long id) {
+//		// TODO Auto-generated method stub
+//		return patientRepo.showviewallpatientById(id);
+//	}
 
 //	@Override
 //	public List<AppointmentHistory> getAppointments(long id) 
@@ -50,27 +50,27 @@ public class PatientServiceImpl implements IPatientService {
 		return patientDetails;
 	}
 
-	//
+	@Override
+	public Patient savePatientDetails(Patient patient) throws PatientNotFoundException {
+		if (patientRepo.existsById(patient.getPatientId())) {
+			throw new PatientNotFoundException("Patient id is not found, Enter Correct Patient Id ");
+		} else {
+			return patientRepo.saveAndFlush(patient);
+		}
+
+	}
+
 //	@Override
 //	public Patient savePatientDetails(Patient patient) throws PatientNotFoundException {
-//		if(patientRepo.existsById(patient.getPatientId())) {
+//		List<Patient> te = patientRepo.findAll().stream().filter(t -> t.getSymptoms().equals(patient.getSymptoms()))
+//				.collect(Collectors.toList());
+//
+//		if (te.size() > 0) {
 //			throw new PatientNotFoundException("Patient id is not found, Enter Correct Patient Id ");
 //		}
 //
 //		return patientRepo.save(patient);
 //	}
-
-	@Override
-	public Patient savePatientDetails(Patient patient) throws PatientNotFoundException {
-		List<Patient> te = patientRepo.findAll().stream().filter(t -> t.getSymptoms().equals(patient.getSymptoms()))
-				.collect(Collectors.toList());
-
-		if (te.size() > 0) {
-			throw new PatientNotFoundException("Patient id is not found, Enter Correct Patient Id ");
-		}
-
-		return patientRepo.save(patient);
-	}
 
 	//
 	@Override
