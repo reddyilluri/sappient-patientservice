@@ -4,7 +4,7 @@ server:
     context-path: /patient
 
 swagger:
-  url: http://localhost:8092/patient
+  url: https://localhost:8092/patient
 eureka:
   client:
     register-with-eureka: false
