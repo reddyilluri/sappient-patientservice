@@ -22,7 +22,7 @@ import com.pratian.PatientService.Service.SymptomService;
 
 import io.swagger.v3.oas.annotations.Operation;
 
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/symptom")
 public class SymptomController {
