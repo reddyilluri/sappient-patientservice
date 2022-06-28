@@ -3,8 +3,30 @@ server:
   servlet:
     context-path: /patient
 
+spring:
+  application:
+    name: patient-service 
+
+  datasource:
+    #url: jdbc:mysql://localhost:3306/appointmenttServicedatabase?createDatabaseIfNotExist=true
+    url: jdbc:mysql://db.ccb27u4ngh0j.ap-south-1.rds.amazonaws.com:3306/PatientServicedatabase?createDatabaseIfNotExist=true
+    username: admin
+    password: qwerty12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+     ddl-auto: update
+    properties:
+     hibernate:
+            database-platform: org.hibernate.dialect.MySQL8Dialect
+           
+
 swagger:
-  url: https://localhost:8092/patient
+  url: 
+    productionURL: https://patient.learn.skillassure.com/patient
+      #localURL: https://localhost:${server.port}/patient
+      
 eureka:
   client:
     register-with-eureka: false
@@ -13,6 +35,7 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
   instance:
     hostname: localhost
+    
 logging:
   file:
     name: inventory.log
