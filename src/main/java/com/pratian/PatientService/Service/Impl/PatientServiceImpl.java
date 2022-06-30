@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.pratian.PatientService.Entities.Patient;
+import com.pratian.PatientService.Exceptions.PatientAlreadyExistsException;
 import com.pratian.PatientService.Exceptions.PatientNotFoundException;
 import com.pratian.PatientService.Entities.AppointmentHistory;
 import com.pratian.PatientService.Repository.IPatientRepo;
@@ -51,9 +52,9 @@ public class PatientServiceImpl implements IPatientService {
 	}
 
 	@Override
-	public Patient savePatientDetails(Patient patient) throws PatientNotFoundException {
+	public Patient savePatientDetails(Patient patient) throws PatientAlreadyExistsException {
 		if (patientRepo.existsById(patient.getPatientId())) {
-			throw new PatientNotFoundException("Patient id is not found, Enter Correct Patient Id ");
+			throw new PatientAlreadyExistsException("Patient Already Exists ");
 		} else {
 			return patientRepo.saveAndFlush(patient);
 		}
