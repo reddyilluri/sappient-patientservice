@@ -29,7 +29,7 @@ import io.swagger.v3.oas.annotations.Operation;
 
 
 
-@CrossOrigin(origins = "https://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 
 @RequestMapping("/showappointmenthistory")

@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pratian.PatientService.Entities.AppointmentHistory;
 import com.pratian.PatientService.Entities.Feedback;
 
-@CrossOrigin(origins = "https://localhost:4200")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/viewallpatient")
 public class PatientController {

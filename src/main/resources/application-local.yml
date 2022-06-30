@@ -1,14 +1,14 @@
 server:
   port: 8092
   servlet:
-    context-path: /patient
+    context-path: /patient 
 
 spring:
   application:
     name: patient-service 
 
   datasource:
-    #url: jdbc:mysql://localhost:3306/appointmenttServicedatabase?createDatabaseIfNotExist=true
+    #url: jdbc:mysql://localhost:3306/PatientServicedatabase?createDatabaseIfNotExist=true
     url: jdbc:mysql://db.ccb27u4ngh0j.ap-south-1.rds.amazonaws.com:3306/PatientServicedatabase?createDatabaseIfNotExist=true
     username: admin
     password: qwerty12345
