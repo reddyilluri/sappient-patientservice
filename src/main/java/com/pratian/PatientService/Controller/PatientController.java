@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.pratian.PatientService.Entities.Patient;
 import com.pratian.PatientService.Entities.PrescriptionHistory;
 import com.pratian.PatientService.Entities.Symptom;
+import com.pratian.PatientService.Exceptions.PatientAlreadyExistsException;
 import com.pratian.PatientService.Exceptions.PatientNotFoundException;
 import com.pratian.PatientService.Service.IPatientService;
 
@@ -63,12 +64,12 @@ public class PatientController {
 	// we need to add the patient info by
 	@PostMapping("/addpatients") // using POST API
 	@Operation(summary = "To add patient Details")
-	public ResponseEntity<?> get(@RequestBody Patient patient) throws PatientNotFoundException {
+	public ResponseEntity<?> get(@RequestBody Patient patient) throws PatientAlreadyExistsException {
 
 		ResponseEntity<?> response = null;
 		try {
 			response = new ResponseEntity<Patient>(service.savePatientDetails(patient), HttpStatus.OK);
-		} catch (PatientNotFoundException e) {
+		} catch (PatientAlreadyExistsException e) {
 			response = new ResponseEntity<String>(e.getMessage(), HttpStatus.OK);
 		}
 		return response;
