@@ -26,9 +26,9 @@ public class FeedbackServiceImpl implements FeedbackService{
 	}
 
 	@Override
-	public Feedback saveFeedback(Feedback givefeedbcak) {
+	public Feedback saveFeedback(Feedback givefeedback) {
 		// TODO Auto-generated method stub
-		return feedbackRepository.save(givefeedbcak);
+		return feedbackRepository.save(givefeedback);
 	}
 
 	
