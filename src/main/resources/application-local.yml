@@ -24,7 +24,7 @@ spring:
 
 swagger:
   url: 
-    productionURL: https://patient.learn.skillassure.com/patient
+    productionURL: http://40.82.154.151:8092/patient
       #localURL: https://localhost:${server.port}/patient
       
 eureka:
