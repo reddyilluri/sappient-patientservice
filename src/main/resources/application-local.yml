@@ -9,9 +9,9 @@ spring:
 
   datasource:
     #url: jdbc:mysql://localhost:3306/PatientServicedatabase?createDatabaseIfNotExist=true
-    url: jdbc:mysql://db.ccb27u4ngh0j.ap-south-1.rds.amazonaws.com:3306/PatientServicedatabase?createDatabaseIfNotExist=true
-    username: admin
-    password: qwerty12345
+    url: jdbc:mysql://40.82.154.151:3306/patientservice?createDatabaseIfNotExist=true
+    username: root
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
