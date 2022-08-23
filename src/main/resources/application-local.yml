@@ -8,8 +8,8 @@ spring:
     name: patient-service 
 
   datasource:
-    url: jdbc:mysql://localhost:3306/PatientServicedatabase?createDatabaseIfNotExist=true
-    #url: jdbc:mysql://40.82.154.151:3306/patientservice?createDatabaseIfNotExist=true
+    #url: jdbc:mysql://localhost:3306/PatientServicedatabase?createDatabaseIfNotExist=true
+    url: jdbc:mysql://15.206.153.116:3306/patientservice?createDatabaseIfNotExist=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
