@@ -8,7 +8,7 @@ spring:
     name: patient-service 
 
   datasource:
-    url: jdbc:mysql://localhost:3306/PatientServicedatabase?createDatabaseIfNotExist=true
+    url: jdbc:mysql://43.205.214.236:3306/PatientServicedatabase?createDatabaseIfNotExist=true
     #url: jdbc:mysql://15.206.153.116:3306/patientservice?createDatabaseIfNotExist=true
     username: root
     password: root
@@ -24,8 +24,8 @@ spring:
 
 swagger:
   url: 
-    productionURL: https://patientservice.eurofins.skillassure.com/patient
-      #localURL: https://localhost:${server.port}/patient
+    #productionURL: https://patientservice.eurofins.skillassure.com/patient
+      localURL: https://localhost:${server.port}/patient
       
 eureka:
   client:
