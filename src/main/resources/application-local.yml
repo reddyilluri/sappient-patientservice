@@ -24,7 +24,7 @@ spring:
 
 swagger:
   url: 
-    productionURL: https://patientservice.eurofins.skillassure.com/patient
+    productionURL: https://43.205.214.236:6666/patient
       #localURL: https://localhost:${server.port}/patient
       
 eureka:
